@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceMonitoring", "PriceMonitoring\PriceMonitoring.csproj", "{A0B0051F-2280-4E86-9681-CAB8B0B6D5CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0B0051F-2280-4E86-9681-CAB8B0B6D5CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0B0051F-2280-4E86-9681-CAB8B0B6D5CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0B0051F-2280-4E86-9681-CAB8B0B6D5CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0B0051F-2280-4E86-9681-CAB8B0B6D5CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {18B15926-9064-4C2D-97D0-B99B6DE69EC0}
+	EndGlobalSection
+EndGlobal

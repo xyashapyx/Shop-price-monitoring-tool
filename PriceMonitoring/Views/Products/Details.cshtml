@@ -1,0 +1,65 @@
+﻿@model PriceMonitoring.ViewModels.ProductViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<h2>Details</h2>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.Product.Title)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.Description)
+        </dd>
+
+    </dl>
+</div>
+@foreach (var item in Model.Images)
+{
+    <img src="@Url.Content(@item)" alt="">
+}
+
+@section scripts {
+    <script type="text/javascript">
+        window.onload = function () {
+
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                title: {
+                    text: "Price dynamic"
+                },
+                axisX: {
+                    valueFormatString: "DD MMM"
+                },
+                axisY: {
+                    title: "Price in hrn",
+                    prefix: "₴",
+                    includeZero: false
+                },
+                data: [{
+                    type: "spline",
+                    xValueType: "dateTime",
+                    xValueFormatString: "DD MMM",
+                    yValueFormatString: "$#.###",
+                    dataPoints: @Html.Raw(Model.Prices)
+                }]
+            });
+            chart.render();
+
+        }
+    </script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+}
