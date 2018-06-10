@@ -29,6 +29,7 @@ namespace PriceMonitoring
             container.RegisterType<IImageRepository, ImageRepository>(new SingletonLifetimeManager());
             container.RegisterType<IPriceRepository, PriceRepository>(new SingletonLifetimeManager());
             container.RegisterType<IInformationImportService, InformationImportService>(new SingletonLifetimeManager());
+            container.RegisterType<IDataReader, DataReader>(new SingletonLifetimeManager());
         }
     }
 }

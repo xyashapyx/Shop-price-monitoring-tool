@@ -185,6 +185,7 @@
     <Compile Include="Inerfaces\Repository\IPriceRepository.cs" />
     <Compile Include="Inerfaces\Repository\IProductRepository.cs" />
     <Compile Include="Inerfaces\Repository\IRepositoryBase.cs" />
+    <Compile Include="Inerfaces\Services\IDataReader.cs" />
     <Compile Include="Inerfaces\Services\IInformationImportService.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\PriceMonitoringDBContext.cs" />
@@ -198,6 +199,7 @@
     <Compile Include="Repository\PriceRepository.cs" />
     <Compile Include="Repository\ImageRepository.cs" />
     <Compile Include="Repository\ProductRepository.cs" />
+    <Compile Include="Services\DataReader.cs" />
     <Compile Include="Services\InformationImportService.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
   </ItemGroup>
