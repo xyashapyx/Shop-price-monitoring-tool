@@ -38,7 +38,7 @@ namespace PriceMonitoring.ViewModels
                 productPrices.Add(new Price
                 {
                     ProductId = Product.Id,
-                    RegistrationDate = DateTime.Now,
+                    RegistrationDate = DateTime.Today,
                     ProductPrice = productPrices.Last().ProductPrice
                 });
 

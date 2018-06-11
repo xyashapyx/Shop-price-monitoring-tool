@@ -7,7 +7,7 @@ namespace PriceMonitoring.Helpers
         public static string ConvertToBase64(byte[] imageBytes)
         {
             string imreBase64Data = Convert.ToBase64String(imageBytes);
-            return string.Format("data:image/png;base64,{0}", imreBase64Data);
+            return $"data:image/png;base64,{imreBase64Data}";
         }
     }
 }
