@@ -23,6 +23,7 @@ namespace PriceMonitoring.ViewModels
         public Product Product { get; }
         public List<string> Images { get; } = new List<string>();
         public string Prices { get; set; }
+        public string Price { get; set; }
 
         private void loadProductImages(IImageRepository imageRepository)
         {
@@ -34,6 +35,7 @@ namespace PriceMonitoring.ViewModels
         private void loadProductPrices(IPriceRepository priceRepository)
         {
             var productPrices = priceRepository.FindSet(x => x.ProductId == Product.Id).ToList();
+            Price = productPrices.Last().ProductPrice.ToString();
             if (productPrices.Last().RegistrationDate.Date < DateTime.Today)
                 productPrices.Add(new Price
                 {

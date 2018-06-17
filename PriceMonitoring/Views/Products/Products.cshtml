@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Products";
+}
+
+<h2>Products</h2>
+<div id="loader"></div>
+
+
+<div class="row">
+
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Products</h2>
+            </div>
+            <div class="panel-body">
+                <ul class="list-unstyled" data-bind="foreach: Products">
+                    <li>
+                        <strong><span data-bind="text: Product.Title"></span></strong>: <span data-bind="text: Price"></span>
+                        <small><a href="#" data-bind="click: $parent.getProductDetail">Details</a></small>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="alert alert-danger" data-bind="visible: error"><p data-bind="text: error"></p></div>
+    </div>
+
+    <!-- ko if:Detail() -->
+
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Details</h2>
+            </div>
+
+            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+
+            <table class="table">
+                <tr><td>Title</td><td data-bind="text: Detail().Product.Title"></td></tr>
+                <tr><td>Description</td><td data-bind="text: Detail().Product.Description"></td></tr>
+                <tr><td>Price</td><td data-bind="text: Detail().Price"></td></tr>
+            </table>
+
+            <!-- ko foreach: Detail().Images -->
+            <img data-bind="attr:{src: $data}" alt="">
+            <!-- /ko -->
+        </div>
+    </div>
+    <!-- /ko -->
+</div>
+
+@section scripts {
+    <script src="~/Scripts/productLoader.js"></script>
+    <script src="~/Scripts/chartDrawing.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+}
